@@ -1,0 +1,483 @@
+/*account section*/
+.account-cont {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 22px;
+
+  @include max-991 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.account-sidebar {
+  width: 100%;
+  background-color: $white;
+  border-radius: 7px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.account-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+// .account-list li {
+//   padding: 15px 20px;
+// }
+// .account-list li:last-of-type {
+//   border-bottom: none;
+// }
+.account-ancor {
+  padding: 15px 20px !important;
+  position: relative;
+  font-weight: 300;
+  font-size: 14px;
+  color: $hover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  background-color: transparent;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  border-bottom: none;
+
+  i {
+    font-size: 12px;
+    width: 12px;
+
+    html[dir="ltr"] & {
+      transform: scaleX(-1);
+    }
+  }
+
+  &.active,
+  &:hover {
+    color: $main;
+    background-color: #f2f4ff;
+  }
+
+  &.out {
+    font-weight: 400;
+    color: #d72238;
+
+    &:hover {
+      background-color: rgba(215, 34, 56, 0.1);
+    }
+  }
+}
+
+.account-content {
+  width: 100%;
+}
+
+.order-item {
+  width: 100%;
+  display: block;
+  background-color: $white;
+  width: 100%;
+  padding: 13px;
+  border-radius: 7px;
+  margin-bottom: 45px;
+
+  .product-by {
+    font-size: 14px;
+    color: $hover;
+    margin: 0;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.order-item-cont {
+  background-color: rgba(97, 167, 198, 0.1);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #979797;
+  margin-bottom: 20px;
+}
+
+.order-item-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 300;
+  font-size: 14px;
+  color: $hover;
+  margin-bottom: 15px;
+
+  .order-id {
+    font-weight: 400;
+    font-size: 22px;
+  }
+}
+
+.order-item-total {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 18px;
+  color: $hover;
+
+  .order-total {
+    color: $main;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.track-model {
+  padding: 24px 20px;
+  background-color: #f9f9f9;
+  border-radius: 7px;
+  max-width: 100%;
+  position: relative;
+
+  .modal-content {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    inset-inline-end: 15px;
+    font-size: 14px;
+    color: $hover;
+    opacity: 1;
+    padding: 0;
+    outline: none;
+
+    &:hover {
+      color: $main;
+    }
+  }
+}
+
+.model-title {
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: $hover;
+  margin-bottom: 35px;
+}
+
+.order-progress {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+
+
+
+@media (max-width: 767px) {
+  .order-progress {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+  .flex-in-mobile {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.order-progress .order-step {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  // flex-grow: 1;
+  gap: 20px;
+
+  &:nth-of-type(1) {
+    z-index: 4;
+  }
+
+  &:nth-of-type(2) {
+    z-index: 3;
+  }
+
+  &:nth-of-type(3) {
+    z-index: 2;
+  }
+
+  &:nth-of-type(4) {
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .order-progress .order-step {
+    flex-direction: row;
+    height: 58px;
+  }
+}
+
+.order-progress .order-step:first-of-type .step-icon::before {
+  display: none;
+}
+
+.order-progress .order-step.done .step-icon {
+  background-color: $main;
+  color: $white;
+}
+
+.order-progress .order-step.done .step-icon::before {
+  background-color: $main;
+}
+
+.order-progress .step-icon {
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  background-color: #979797;
+  font-size: 10px;
+  color: #979797;
+  @include flexCenter;
+  position: relative;
+  transform: translateX(-50%);
+  @include tr;
+
+  i {
+    transform: rotate(20deg);
+  }
+}
+
+.order-progress .step-icon::before {
+  height: 5px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  background-color: #979797;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+html[dir="rtl"] .order-progress .step-icon::before {
+  inset-inline-end: 0;
+}
+
+html[dir="ltr"] .order-progress .step-icon::before {
+  right: 0;
+}
+
+// @media (max-width: 1199px) {
+//   .order-progress .step-icon::before {
+//     width: 300px;
+//   }
+// }
+
+@media (max-width: 767px) {
+  .order-progress .step-icon::before {
+    width: 5px;
+    height: 40px;
+    top: auto;
+    bottom: 100%;
+  }
+
+  html[dir="rtl"] .order-progress .step-icon::before {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  html[dir="ltr"] .order-progress .step-icon::before {
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+}
+
+.order-progress .step-name {
+  font-weight: 500;
+  font-size: 12px;
+  color: #979797;
+  text-wrap: nowrap;
+}
+
+.order-progress .done .step-name {
+  color: $main;
+}
+
+.order-progress .step-time {
+  font-weight: 300;
+  font-size: 12px;
+  color: #979797;
+  text-align: start;
+}
+
+.rate-btn {
+  font-weight: 500;
+  font-size: 12px;
+  color: $main;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  @include tr;
+  margin-inline-start: auto;
+
+  &:hover {
+    color: $hover;
+  }
+
+  i {
+    html[dir="ltr"] & {
+      transform: scaleX(-1);
+    }
+  }
+
+  @include min-992 {
+    position: absolute;
+    top: 15px;
+    inset-inline-end: 25px;
+  }
+}
+
+.rate-model {
+  background-color: #f1f1f0;
+  border-radius: 7px;
+  padding: 30px 17px;
+  max-width: 350px;
+  margin: 30px auto;
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    inset-inline-end: 15px;
+    font-size: 14px;
+    color: $hover;
+    opacity: 1;
+    padding: 0;
+    outline: none;
+
+    &:hover {
+      color: $main;
+    }
+  }
+
+  .modal-content {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+  }
+
+  .model-title {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+textarea.form-input {
+  height: 100px;
+  border: 0.5px solid #1c1c1c33;
+  border-radius: 10px;
+  text-align: start;
+  padding: 20px;
+}
+
+.rating {
+  margin-bottom: 25px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rating>label {
+  color: #a0a3ad;
+}
+
+.rating>label:before {
+  font-size: 40px;
+  font-family: "Font Awesome 6 Pro";
+  content: "\f005";
+  display: inline-block;
+  font-weight: 800;
+}
+
+.rating>input {
+  display: none;
+}
+
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+  color: #fece31;
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~label:hover~label {
+  color: #f79426;
+}
+.order-progress-g {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  // base alignment for children
+  .step-time,
+  .step-name {
+    max-width: 100%;
+    text-align: start;
+  }
+
+  // 2nd child center
+  :nth-child(2) {
+    text-align: center;
+  }
+
+  // 3rd child center
+  :nth-child(3) {
+    text-align: center;
+  }
+
+  // 4th child start
+  :nth-child(4) {
+    text-align: end;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    height: fit-content;
+    width: 100%;
+
+    :nth-child(2),
+    :nth-child(3),
+    :nth-child(4) {
+      text-align: start;
+    }
+
+    .step-time {
+      height: 58px;
+    }
+  }
+}
