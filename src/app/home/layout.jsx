@@ -6,7 +6,7 @@ export default function Profile({ children }) {
     return (
             <div className="home-wrapper">
                 <SideData />
-                <div className="home-content" id='home-content'>
+                <div className="content-wrapper">
                     {children}
                 </div>
             </div>

@@ -42,7 +42,7 @@ export default function HomeWelcomeWrapper() {
     }, []);
 
     return (
-        <div className="content-wrapper">
+        <>
             <Header page='welcome' title={null} isMain={true}
             // first="الرئيــسية" firstURL="/" second='التحليــلات' secondURL="/home/analysis"
             />
@@ -69,6 +69,6 @@ export default function HomeWelcomeWrapper() {
                     </button>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
