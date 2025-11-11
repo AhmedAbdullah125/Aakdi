@@ -50,7 +50,7 @@ body {
   box-sizing: border-box;
   font-style: normal;
   font-weight: 400;
-  background-color: #f9f9f9;
+  background-color: var(--white-color);
 }
 
 .overflow {
@@ -643,6 +643,102 @@ ul.breadcrumb li a:hover {
 }
 .home-cont .home-user-card .start-btn:hover {
   background-color: var(--main-color);
+}
+
+.dayCard {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 14px;
+  background-color: #F6F6F6;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+.dayCard .r-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dayCard .r-side .upper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dayCard .r-side .upper .card-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4D4D4D;
+}
+.dayCard .r-side .upper .percentage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #007C13;
+}
+.dayCard .r-side .lower {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black-color);
+}
+.dayCard .r-side .lower .total-value {
+  color: var(--main-hover);
+}
+.dayCard .r-side .lower img {
+  width: 15px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.dayCard .l-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+.dayCard .l-side .upper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dayCard .l-side .upper img {
+  width: 15px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.dayCard .l-side button {
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #007C13;
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
+  font-size: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.dayCard .l-side button:hover {
+  background-color: #007C13;
+  color: var(--white-color);
+}
+
+.analysis-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
 }
 
 /* From Uiverse.io by Nawsome */

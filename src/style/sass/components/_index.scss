@@ -354,3 +354,95 @@
         }
     }
 }
+
+.dayCard{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 14px;
+    background-color: #F6F6F6;
+    height: fit-content;
+    @include tr;
+    .r-side{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        .upper{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .card-title{
+                font-size: 10px;
+                font-weight: 700;
+                color: #4D4D4D;
+            }
+            .percentage{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 12px;
+                font-weight: 700;
+                color: #007C13;
+               
+            }
+        }
+        .lower{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: $black;
+            .total-value{
+                color: $hover;
+            }
+            img{
+                width: 15px;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+    }
+    .l-side{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 10px;
+        .upper{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img{
+                width: 15px;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+        button{
+            height: 32px;
+            padding: 0 10px;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #007C13;
+            border: 1px solid #0000001A;
+            font-size: 10px;
+            font-weight: 700;
+            @include tr;
+            &:hover{
+                background-color: #007C13;
+                color: $white;
+            }
+        }
+    }
+}
+.analysis-wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    height: fit-content;
+    width: 100%;
+}
