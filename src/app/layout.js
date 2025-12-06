@@ -1,6 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'react-datepicker/dist/react-datepicker.css';
 import './globals.css';
 import '@/src/style/main.css';
 import { Toaster } from 'sonner';
@@ -12,11 +10,11 @@ export async function generateMetadata() {
     openGraph: {
       title: 'Aakdi',
       description: 'Aakdi',
-      url: 'Aakdi-rose.vercel.com',
+      url: 'https://aqdi.sa',
       siteName: 'Aakdi',
       images: [
         {
-          url: 'https://Aakdi-rose.vercel.app/_next/static/media/blue-logo.62b83cbf.svg',
+          url: 'https://aqdi.sa/website/asset/images/logo.svg',
           width: 1200,
           height: 630,
           alt: 'Aakdi',

@@ -1,7 +1,7 @@
 import InCompletedOrdersAnalysisWrapper from '@/components/analysis/OrderAnalysis/InCompletedOrdersAnalysisWrapper'
 import React from 'react'
-export default function page({ params }) {
-    const { id } = params
+export default async function page({ params }) {
+    const { id } = await params
     return (
         <InCompletedOrdersAnalysisWrapper id={id} />
     )

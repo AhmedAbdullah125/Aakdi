@@ -1,7 +1,7 @@
 import ExpenseAnalysisWrapper from '@/components/analysis/expense/ExpenseAnalysisWrapper'
 import React from 'react'
-export default function page({ params }) {
-    const { id } = params
+export default async function page({ params }) {
+    const { id } = await params
     return (
         <ExpenseAnalysisWrapper id={id} />
     )

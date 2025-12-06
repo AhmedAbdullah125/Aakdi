@@ -1,7 +1,7 @@
 import OrdersAnalysisWrapper from '@/components/analysis/OrderAnalysis/OrdersAnalysisWrapper'
 import React from 'react'
-export default function page({ params }) {
-    const { id } = params
+export default async function page({ params }) {
+    const { id } = await params
     return (
         <OrdersAnalysisWrapper id={id} />
     )
