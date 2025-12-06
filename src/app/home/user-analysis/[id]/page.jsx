@@ -1,7 +1,7 @@
 import UsersAnalysisWrapper from '@/components/analysis/UsersAnalysis/UsersAnalysisWrapper'
 import React from 'react'
-export default async function page({ params }) {
-    const { id } = await params
+export default function page({ params }) {
+    const { id } = params
     return (
         <UsersAnalysisWrapper id={id} />
     )
