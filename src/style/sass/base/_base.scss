@@ -1,0 +1,260 @@
+@font-face {
+  font-family: "Alexandria";
+  src: url("../webfonts/Alexandria/Alexandria-ExtraBold.woff2") format("woff2"),
+    url("../webfonts/Alexandria/Alexandria-ExtraBold.woff") format("woff"),
+    url("../webfonts/Alexandria/Alexandria-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("../webfonts/Alexandria/Alexandria-Regular.woff2") format("woff2"),
+    url("../webfonts/Alexandria/Alexandria-Regular.woff") format("woff"),
+    url("../webfonts/Alexandria/Alexandria-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("../webfonts/Alexandria/Alexandria-Light.woff2") format("woff2"),
+    url("../webfonts/Alexandria/Alexandria-Light.woff") format("woff"),
+    url("../webfonts/Alexandria/Alexandria-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("../webfonts/Alexandria/Alexandria-Bold.woff2") format("woff2"),
+    url("../webfonts/Alexandria/Alexandria-Bold.woff") format("woff"),
+    url("../webfonts/Alexandria/Alexandria-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alexandria";
+  src: url("../webfonts/Alexandria/Alexandria-SemiBold.woff2") format("woff2"),
+    url("../webfonts/Alexandria/Alexandria-SemiBold.woff") format("woff"),
+    url("../webfonts/Alexandria/Alexandria-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Alexandria";
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  background-color: $white;
+}
+.overflow {
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast !important;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*style scroll bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $main;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $hover;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $hover;
+}
+
+@include max-767 {
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@include min-1200 {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1170px;
+  }
+}
+
+@include min-1440 {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1320px;
+  }
+}
+
+/*                                 arrow-top                           */
+.arrow-top {
+  position: fixed;
+  bottom: 20px;
+  inset-inline-start: 20px;
+  display: none;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: $main;
+  font-size: 18px;
+  border: none;
+  outline: none !important;
+  color: $white;
+  text-decoration: none !important;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  @include tr;
+  &:hover,
+  &:focus {
+    background-color: $hover;
+    color: $white;
+  }
+}
+@include max-767 {
+  .arrow-top {
+    bottom: 15px;
+    inset-inline-start: 15px;
+  }
+}
+.custom-pagention {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding: 0;
+  list-style-type: none;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.custom-pagention button,
+.custom-pagention span {
+  @include flexCenter;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: $hover;
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  background-color: #d9d9d9;
+  border: none;
+  text-decoration: none !important;
+  outline: none !important;
+  border-radius: 50%;
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-pagention button.active {
+  color: $white;
+  background-color: $main;
+}
+.custom-pagention button:hover {
+  color: $white;
+  background-color: $main;
+}
+
+.breadcrumb-sec {
+  position: relative;
+  @include flexCenter;
+  padding: 40px 0;
+}
+// .page-head {
+//   font-size: 24px;
+//   color: $white;
+//   font-weight: 700;
+//   margin-bottom: 15px;
+//   padding: 0;
+//   text-transform: capitalize;
+//   text-align: center;
+// }
+ul.breadcrumb {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+ul.breadcrumb li a,
+ul.breadcrumb li span,
+ul.breadcrumb li {
+  @include tr;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #808080;
+  font-weight: 400;
+  text-decoration: none !important;
+}
+ul.breadcrumb li span {
+  color: $black;
+  &::after {
+    display: none;
+  }
+}
+ul.breadcrumb li a:hover {
+  color: $hover;
+}
+.breadcrumb li ~ li::before {
+  content: "/";
+  padding: 0 5px;
+  font-size: 14px;
+}
+@media (max-width: 991px) {
+  .breadcrumb-sec {
+    padding: 30px 0;
+  }
+  // .breadcrumb-sec .page-head {
+  //   color: $main;
+  // }
+}
