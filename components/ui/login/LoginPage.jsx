@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
-export default async function LoginPage() {
+export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const FormSchema = z.object({
     email: z.string().email().nonempty("Please enter a valid email address."),
