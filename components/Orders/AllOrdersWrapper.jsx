@@ -1,15 +1,13 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import greenRial from '@/public/images/greenRial.svg'
 import Image from 'next/image'
 import waIcon from '@/public/images/waIcon.svg'
-import blueRial from '@/public/images/blueRial.svg'
 import Link from 'next/link'
 import Header from '../home/Header'
 import { toast } from 'sonner'
 
 export default function AllOrdersWrapper({ id }) {
-    const [title, setTitle] = useState('')
 
 
     const tableHeaders = [
