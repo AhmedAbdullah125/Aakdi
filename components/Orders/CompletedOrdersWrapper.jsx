@@ -9,7 +9,7 @@ import { toast } from 'sonner'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
-export default function CompletedOrdersWrapper({ id }) {
+export default function CompletedOrdersWrapper() {
     const [activeFilter, setActiveFilter] = useState('all');
     const [refundModalStep, setRefundModalStep] = useState(0); // 0: closed, 1: form, 2: submitted, 3: success
     const [selectedOrder, setSelectedOrder] = useState(null);
@@ -255,23 +255,23 @@ export default function CompletedOrdersWrapper({ id }) {
                         </div>
 
                         <div className="filter-badges">
-                            <div className="badge-item green">
+                            <Link href={"/home/orders-analysis/verified"} className="badge-item green">
                                 <span className="badge-icon">✅</span>
                                 <span className="badge-label">تم التوثيق</span>
                                 <span className="badge-count">47</span>
-                            </div>
+                            </Link>
 
-                            <div className="badge-item orange">
+                            <Link href={"/home/orders-analysis/whatsapp_completed_orders"} className="badge-item orange">
                                 <span className="badge-icon">📋</span>
-                                <span className="badge-label">طلب وانتساب محتمل</span>
+                                <span className="badge-label">طلب واتساب مكتمل</span>
                                 <span className="badge-count">04</span>
-                            </div>
+                            </Link>
 
-                            <div className="badge-item yellow">
+                            <Link href={"/home/orders-analysis/refunded_orders"} className="badge-item yellow">
                                 <span className="badge-icon">😊</span>
                                 <span className="badge-label">مستردة</span>
                                 <span className="badge-count">02</span>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="filter-left">

@@ -685,6 +685,7 @@
                 font-weight: 700;
                 color: $black;
                 text-wrap: nowrap;
+                text-align: start;
             }
         }
     }
@@ -1328,7 +1329,7 @@
 
             .rank-number {
                 font-size: 16px;
-                font-weight: 800;
+                font-weight: 700;
                 color: $hover;
             }
 
@@ -1384,7 +1385,7 @@
 
         .user-name {
             font-size: 16px;
-            font-weight: 800;
+            font-weight: 700;
             color: $black;
             margin-bottom: 8px;
             text-align: center;
@@ -1406,7 +1407,7 @@
 
             .stats-number {
                 font-size: 20px;
-                font-weight: 800;
+                font-weight: 700;
                 color: $hover;
                 margin-bottom: 0;
             }
@@ -1744,7 +1745,7 @@
                     }
 
                     .badge-count {
-                        font-weight: 800;
+                        font-weight: 700;
                         font-size: 14px;
                     }
                 }
@@ -1956,7 +1957,7 @@
 
                 .stat-number {
                     font-size: 48px;
-                    font-weight: 900;
+                    font-weight: 500;
                     color: #111827;
                     line-height: 1;
                 }
@@ -3005,5 +3006,402 @@
                 grid-template-columns: 1fr;
             }
         }
+    }
+}
+
+/* Add Contract Status Button */
+.btn {
+    &.btn-primary {
+        background: #0000FF;
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        white-space: nowrap;
+
+        &:hover {
+            background: #0000DD;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 255, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(0, 0, 255, 0.2);
+        }
+    }
+}
+
+/* Role Form Styles */
+.role-form-section {
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.role-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.role-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.role-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.role-save-btn {
+    background: #0000FF;
+    color: white;
+    border: none;
+    padding: 16px 48px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #0000DD;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.role-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggle-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.role-info-text {
+    font-size: 14px;
+    color: #6b7280;
+}
+.financial-analysis-container{
+    position: relative;
+}
+.role-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.role-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.role-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    gap: 4px;
+}
+
+.required-star {
+    color: #EF4444;
+}
+
+.role-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.role-input {
+    width: 100%;
+    padding: 16px 24px;
+    border: 2px solid #E5E7EB;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: right;
+    background: white;
+    transition: all 0.3s ease;
+
+    &:focus {
+        outline: none;
+        border-color: #0000FF;
+        box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.1);
+    }
+
+    &::placeholder {
+        color: #9CA3AF;
+    }
+}
+
+.color-picker-circle {
+    position: absolute;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #E5E7EB;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.color-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    
+    &::-webkit-color-swatch {
+        border: none;
+        border-radius: 50%;
+    }
+}
+
+/* Permissions Grid */
+.permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.permission-box {
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.permission-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 24px 0;
+    text-align: right;
+}
+
+.permission-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-end;
+}
+
+.permission-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 500;
+
+    span {
+        user-select: none;
+    }
+}
+
+/* Custom Checkbox Styling */
+.custom-checkbox {
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #D1D5DB;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: #10B981;
+    }
+
+    &:checked {
+        background: #10B981;
+        border-color: #10B981;
+
+        &::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .role-inputs-grid,
+    .permissions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .role-form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .role-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Delete Role Modal */
+.delete-role-modal {
+    max-width: 550px;
+    padding: 40px;
+    border-radius: 24px;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        transform: scale(1.1);
+        color: #EF4444;
+    }
+}
+
+.delete-modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.delete-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.delete-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #EF4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    i {
+        font-size: 40px;
+        color: white;
+    }
+}
+
+.delete-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+
+.delete-question {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.delete-role-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #EF4444;
+    margin: 0;
+}
+
+.delete-warning {
+    font-size: 16px;
+    color: #6B7280;
+    margin: 0;
+    text-align: center;
+}
+
+.confirm-delete-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 32px;
+    background: #EF4444;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+
+    &:hover {
+        background: #DC2626;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.98);
     }
 }

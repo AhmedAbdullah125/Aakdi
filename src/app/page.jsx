@@ -10,7 +10,7 @@ export default function Page() {
     const token = localStorage.getItem("token");
 
     const timer = setTimeout(() => {
-      router.push(token ? "/home" : "/login");
+      router.push(token ? "/home" : "/home");
     }, 5000);
 
     return () => clearTimeout(timer);

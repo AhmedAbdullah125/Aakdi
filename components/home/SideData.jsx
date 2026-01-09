@@ -41,10 +41,10 @@ export default function SideData() {
         <div className="group-menus">
           <Link href="/home/orders"><span>جميع الطلبات</span><Image src={orders} alt="Aakdi" /></Link>
           <Link href="/home/completed-orders"><span>طلـب مكتمـــل</span><Image src={completedOrders} alt="Aakdi" /></Link>
-          <Link href="/home/incompleted-orders"><span>طلـب غيــر مكتمل</span><Image src={incompletedOrders} alt="Aakdi" /></Link>
-          <Link href="/home/wa-completed-orders"><span>طلـب واتســـاب مكتمـــل </span><Image src={completedWaOrder} alt="Aakdi" /></Link>
-          <Link href="/home/wa-incompleted-orders"><span>طلـب واتسـاب  غير مكتمل</span><Image src={incompletedWaOrder} alt="Aakdi" /></Link>
-          <Link href="/home/returned-orders"><span>طلـب مستــرجع</span><Image src={returnedOrder} alt="Aakdi" /></Link>
+          <Link href="/home/incolpleted-orders-analysis/total"><span>طلـب غيــر مكتمل</span><Image src={incompletedOrders} alt="Aakdi" /></Link>
+          <Link href="/home/orders-analysis/whatsapp_completed_orders"><span>طلـب واتســـاب مكتمـــل </span><Image src={completedWaOrder} alt="Aakdi" /></Link>
+          <Link href="/home/orders-analysis/whatsapp_incompleted_orders"><span>طلـب واتسـاب  غير مكتمل</span><Image src={incompletedWaOrder} alt="Aakdi" /></Link>
+          <Link href="/home/orders-analysis/refunded_orders"><span>طلـب مستــرجع</span><Image src={returnedOrder} alt="Aakdi" /></Link>
           <Link href="/home/sorting-orders"><span>تصنيــف الطلبـــــات</span><Image src={sortingOrders} alt="Aakdi" /></Link>
         </div>
       </div>

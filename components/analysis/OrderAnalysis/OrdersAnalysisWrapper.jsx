@@ -6,10 +6,13 @@ import Image from 'next/image'
 import waIcon from '@/public/images/waIcon.svg'
 import blueRial from '@/public/images/blueRial.svg'
 import Link from 'next/link'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { toast } from "sonner"
 
 export default function OrdersAnalysisWrapper({ id }) {
     const [title, setTitle] = useState('')
-
+    const [refundModalStep, setRefundModalStep] = useState(0);
+    const [selectedOrder, setSelectedOrder] = useState(null);
     useEffect(() => {
         switch (id) {
             case 'day':
@@ -27,33 +30,30 @@ export default function OrdersAnalysisWrapper({ id }) {
             case 'total':
                 setTitle('إجمالي الطلبات المكتمله')
                 break;
-            case 'completed_orders ':
+            case 'completed_orders':
                 setTitle('الطلبات المكتملة')
                 break;
-            case 'incompleted_orders ':
+            case 'incompleted_orders':
                 setTitle('الطلبات غير المكتملة')
                 break;
-            //whatsapp_completed_orders
-            case 'whatsapp_completed_orders ':
+            case 'whatsapp_completed_orders':
                 setTitle("طلبات واتساب مكتملة")
                 break;
-            case 'whatsapp_incompleted_orders ':
+            case 'whatsapp_incompleted_orders':
                 setTitle("طلبات واتساب غير مكتملة")
                 break;
-            //whatsapp_incompleted_orders
-            case 'whatsapp_incompleted_orders ':
-                setTitle("طلبات واتساب غير مكتملة")
-                break;
-            //refunded_orders
-            case 'refunded_orders ':
+            case 'refunded_orders':
                 setTitle("طلبات مسترجعه")
+                break;
+            //تم التوثيـــق
+            case 'verified':
+                setTitle("تم التوثيـــق")
                 break;
             default:
                 setTitle('طلبات اليــوم المكتمله')
                 break;
         }
     }, [id])
-
 
     const tableHeaders = [
         "رقــم الطلب",
@@ -63,7 +63,6 @@ export default function OrdersAnalysisWrapper({ id }) {
         "الدفـــع",
         "مستلم منذ",
         "حــالة الطلب",
-
         "الاسـتلام",
         "الاجـــراءات",
 
@@ -293,9 +292,97 @@ export default function OrdersAnalysisWrapper({ id }) {
                                     <span>{row.reciver}</span>
                                 </td>
                                 <td>
-                                    <button className="actions-btn">
-                                        <i className="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
+                                    <DropdownMenu dir="rtl">
+                                        <DropdownMenuTrigger asChild>
+                                            <button className="actions-btn">
+                                                <i className="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent className="w-64">
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: قيد المعالجة')
+                                            }}>
+                                                <span className="ml-2 text-xl">🧐</span>
+                                                <span>قيد المعالجة</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: بينتظار تأكيد بيانات العقار')
+                                            }}>
+                                                <span className="ml-2 text-xl">⏳</span>
+                                                <span>بينتظار تأكيد بيانات العقار</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: مطلوب اجراء من العميل')
+                                            }}>
+                                                <span className="ml-2">
+                                                    <Image src={waIcon} alt="WhatsApp" width={20} height={20} />
+                                                </span>
+                                                <span>مطلوب اجراء من العميل</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: تم تأكيد العقار')
+                                            }}>
+                                                <span className="ml-2 text-xl">🏡</span>
+                                                <span>تم تأكيد العقار</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: بانتظار اعتماد العقد')
+                                            }}>
+                                                <span className="ml-2 text-xl">😴</span>
+                                                <span>بانتظار اعتماد العقد</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: تم التوثيق')
+                                            }}>
+                                                <span className="ml-2 text-xl">✅</span>
+                                                <span>تم التوثيق</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                setSelectedOrder(row);
+                                                setRefundModalStep(1);
+                                            }}>
+                                                <span className="ml-2 text-xl">😩</span>
+                                                <span>مستردجع</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => {
+                                                toast.success('تم تحديث حالة الطلب إلى: أخرى')
+                                            }}>
+                                                <span className="ml-2 text-xl">🤔</span>
+                                                <span>أخـرى</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+
+                                            <DropdownMenuItem className="cursor-pointer text-red-600" onClick={() => {
+                                                toast.error('تم حذف الطلب')
+                                            }}>
+                                                <span className="ml-2 text-xl">🗑️</span>
+                                                <span>حذف الطلـب</span>
+                                                <i className="fa-solid fa-chevron-left mr-auto"></i>
+                                            </DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
                                 </td>
                             </tr>
                         ))}
