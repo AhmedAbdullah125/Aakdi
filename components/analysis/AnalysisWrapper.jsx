@@ -7,9 +7,59 @@ import EmployeeCard from "./finAnalysis/EmployeeCard";
 import UnitsCard from "./finAnalysis/UnitsCard";
 import LocationsCard from "./finAnalysis/LocationsCard";
 import LayeringCard from "./finAnalysis/LayeringCard";
+import AnalsCard from "./finAnalysis/AnalsCard";
 
 
 export default function Statistics() {
+    const analysisData =
+    {
+        title: "لوحة التحكم :",
+        incomes: [
+            {
+                name: "المقالات ",
+                value: "75",
+                valueType: "count",
+            },
+            {
+                name: "الزيارات",
+                value: "503221",
+                valueType: "count",
+            },
+            {
+                name: "المستخدمين ",
+                value: "128293",
+                valueType: "count",
+            },
+            {
+                name: "العقود المكتملة ",
+                value: "2601",
+                valueType: "count",
+            },
+            {
+                name: "العقود الغير المكتملة ",
+                value: "60737",
+                valueType: "count",
+            },
+            {
+                name: "اجمالي المدفوعات في العقود",
+                value: "629892",
+                valueType: "price",
+            },
+            {
+                name: "عقود مدفوعه",
+                value: "629892",
+                valueType: "price",
+            },
+            {
+                name: "المدن",
+                value: "629892",
+                valueType: "price",
+            },
+
+        ]
+
+    }
+
     const data = [
         {
             title: "التحليــلات المــاليــة :",
@@ -648,6 +698,17 @@ export default function Statistics() {
         <>
             <Header page='welcome' title={"التحليــلات"} isMain={false} first="الرئيــسية" firstURL="/" second='التحليــلات' secondURL="/home/analysis" />
             <div className="analysis-cont" dir="rtl">
+                <h2>{analysisData.title}</h2>
+                <div className="category-cont">
+                    <main className="analysis-wrapper">
+
+                        {
+                            analysisData.incomes?.map((item, index) => (
+                                <AnalsCard key={index} item={item} />
+                            ))
+                        }
+                    </main>
+                </div>
                 {
                     data.map((item, index) => (
                         <div className="category-cont" key={index}>
