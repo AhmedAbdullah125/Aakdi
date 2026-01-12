@@ -52,18 +52,18 @@ export default function Statistics() {
             },
             {
                 name: "المدن",
-                value: "629892",
+                value: "4581",
                 valueType: "count",
             },
 
             {
                 name: "الوحدات",
-                value: "629892",
+                value: "1942",
                 valueType: "count",
             },
             {
                 name: "الموظفين",
-                value: "629892",
+                value: "12",
                 valueType: "count",
             },
 
