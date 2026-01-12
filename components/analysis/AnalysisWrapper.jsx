@@ -710,8 +710,8 @@ export default function Statistics() {
         <>
             <Header page='welcome' title={"التحليــلات"} isMain={false} first="الرئيــسية" firstURL="/" second='التحليــلات' secondURL="/home/analysis" />
             <div className="analysis-cont" dir="rtl">
-                <h2>{analysisData.title}</h2>
                 <div className="category-cont">
+                    <h2>{analysisData.title}</h2>
                     <main className="analysis-wrapper">
 
                         {
