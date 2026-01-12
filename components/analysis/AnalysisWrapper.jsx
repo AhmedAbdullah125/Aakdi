@@ -53,8 +53,20 @@ export default function Statistics() {
             {
                 name: "المدن",
                 value: "629892",
-                valueType: "price",
+                valueType: "count",
             },
+
+            {
+                name: "الوحدات",
+                value: "629892",
+                valueType: "count",
+            },
+            {
+                name: "الموظفين",
+                value: "629892",
+                valueType: "count",
+            },
+
 
         ]
 
@@ -67,7 +79,7 @@ export default function Statistics() {
                 {
                     name: "دخــل اليــوم",
                     value: "4107.02",
-                    valueType: "price",
+                    valueType: "count",
                     percentage: "+10%",
                     type: "day",
                     link: "/home/financial-analysis/day"
